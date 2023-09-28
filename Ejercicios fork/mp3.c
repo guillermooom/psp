@@ -7,36 +7,31 @@
 
 void main(){
 
-	pid_t proceso1,proceso2;
+	pid_t proceso;
 	
 	//creamos los procesos
-	//for(int i=0;i<2;i++){}
-	proceso1=fork();
-	proceso2=fork();	
+	for(int i=0;i<2;i++){
+	proceso=fork();
+
+  	if(proceso==0){
   	
-  	if(proceso1==0 || proceso2==0){
   		//dormimos el primer proceso y que diga cuando se despierte
-  		if(proceso1 == 0){
   			/*sleep(10);
-  			printf("\nDespierto!");*/
-  			printf("Soy el Proceso 2\n");
-  			printf("Mi PID es %d\n",getpid());
-  			printf("El PID de mi padre es %d\n",getppid());
-  		}
-  		
+		printf("\nDespierto!");*/
+		printf("Soy el Proceso %d\n",i);
+		printf("Mi PID es %d\n",getpid());
+		printf("El PID de mi padre es %d\n",getppid());
+  	
   		//el ultimo proceso mostrara su pid y el de su padre
-  		if(proceso2 == 0){
-  			printf("Soy el Proceso 3\n");
-  			printf("Mi PID es %d\n",getpid());
-  			printf("El PID de mi padre es %d\n",getppid());
-  		}
+ 	break;
   		
 
   	}else{
   	wait(NULL);
-  	printf("\nCIERRE DE PROGRAMA\n");
-  	 	
-  	}
+  	
+	printf("\n\nPAPA PID %d\n\n",getpid());
+	}
+}
   	
   	exit(0);
 }
