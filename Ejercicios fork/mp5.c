@@ -11,8 +11,6 @@ void main(){
 	
 	pid1 = fork();
 	
-	//printf("%d\n",getpid());
-	
 	if(pid1==0){
 	
 		printf("BBB \n");
