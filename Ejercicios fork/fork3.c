@@ -17,7 +17,6 @@ void main(){					//P1
 		pid2 = fork();			//P3
 		
 		if(pid2==0){
-			printf("aa-------");
 			printf("Mi PID es el %d\n",getpid());
 			printf("Mi padre tiene el %d\n",getppid());
 			printf("Acaba P3\n\n");//ACABA P3
@@ -29,7 +28,6 @@ void main(){					//P1
 		pid3 = fork();			//P4
 		
 		if(pid3==0 && pid2!=0){
-		printf("bb-------");
 			printf("Mi PID es el %d\n",getpid());
 			printf("Mi padre tiene el %d\n",getppid());
 			printf("Acaba P4\n\n");//ACABA P4
