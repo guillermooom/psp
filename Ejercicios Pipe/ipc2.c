@@ -23,17 +23,18 @@ void main(){
      close(fd[1]); // Cierra el descriptor de lectura
      read(fd[0], buffer,4);
      
-     //cuando printeo tiene que ser c ya que si no lo lee en codigo ascii
-     for(int i=0;i<3;i++){
-     	printf("Numero a sumar: %c\n", buffer[i]);
-     	total+=(buffer[i]-'0');
-     	
-     }
+     if(buffer[3]=='+'){
+	     //cuando printeo tiene que ser c ya que si no lo lee en codigo ascii
+	     for(int i=0;i<3;i++){
+	     	printf("Numero a sumar: %c\n", buffer[i]);
+	     	total+=(buffer[i]-'0');
+	     	
+	     }
+	     
+	     printf("Simbolo: %c\n",buffer[3]);
+	     printf("Total: %d\n",total);
      
-     printf("Simbolo: %c\n",buffer[3]);
-     printf("Total: %d\n",total);
-     
- 
+ 	}
      
      }
      
