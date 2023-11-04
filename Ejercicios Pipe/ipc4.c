@@ -47,13 +47,15 @@ void main(){
 	 int num=rand()%11;
 	 char escribe [2],lectu[255];
 	 int total;
+	 
+	 printf("El padre genera el %i\n",num);
 
 	 sprintf(escribe,"%d",num);
 	 write(p1[1],escribe,strlen(escribe));
 	 
 	 read(p2[0],lectu,sizeof(lectu));
 	 total = atoi(lectu);
-	 printf("\nFactorial de %i es %i \n",num,total);
+	 printf("\nFactorial calculado por el hijo de %i es %i \n",num,total);
 	 
 	 wait(NULL);
          }
